@@ -18,7 +18,7 @@ const Home = () => {
   }
   return (
     <>
-      <div className="justify-center flex">
+      <div className="justify-center flex pt-36">
         <img src={poster1} className="justify-center h-96 items-center flex " />
       </div>
 
