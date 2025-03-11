@@ -28,21 +28,26 @@ const Products = ({ cart, handleAddClick, handleRemoveClick }) => {
 
   if (loading) {
     return (
-      <div className="flex h-screen items-center justify-center font-mono text-4xl font-semibold">
-        Loading....
-      </div>
+      <div className="flex h-screen items-center justify-center space-x-4 text-4xl font-semibold">
+      <svg className="h-10 w-10 animate-spin text-cyan-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+      </svg>
+      <span>Loading...</span>
+    </div>
+    
     );
   }
 
   return (
-    <div className="h-full container mx-auto pt-40 px-16 overflow-auto justify-center items-center flex">
-      <div className="flex flex-wrap gap-11 mb-10">
+    <div className="min-h-screen pt-32 pb-16 px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
           <div
             key={product.id}
             className="w-60 h-auto mb-5 hover:bg-zinc-200 p-5"
           >
-            <figure className="flex items-center justify-center">
+            <figure className="flex items-center justify-center pb-4">
               <img src={product.image} className="w-32 h-40" />
             </figure>
             <h1 className="text-xl flex flex-wrap font-semibold">
@@ -57,12 +62,12 @@ const Products = ({ cart, handleAddClick, handleRemoveClick }) => {
             <div className="items-center justify-center flex flex-col gap-4">
               <button
                 onClick={() => navigate(`/products/${product.id}`)}
-                className="items-center justify-center flex p-2 hover:px-3 rounded-md bg-slate-300 hover:font-semibold"
+                className="items-center justify-center flex p-2 rounded-md bg-cyan-700 hover:bg-cyan-900 text-white"
               >
                 View
               </button>
               <button
-                className="items-center justify-center rounded-md flex p-2 hover:px-3 bg-slate-300 hover:font-semibold"
+                className="items-center justify-center rounded-md flex p-2  bg-cyan-700 hover:bg-cyan-900 text-white"
                 onClick={() =>
                   isInCart(product)
                     ? handleRemoveClick(product)

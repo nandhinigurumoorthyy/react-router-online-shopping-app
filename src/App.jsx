@@ -3,6 +3,8 @@ import Cart from "./Components/Cart/Cart";
 import AppFooter from "./Components/Common/AppFooter";
 import AppHeader from "./Components/Common/AppHeader";
 import Home from "./Components/Home/Home";
+import About from "./Components/Home/About";
+import Contact from "./Components/Home/Contact";
 import Products from "./Components/Products/Products";
 import ProductItem from "./Components/Products/ProductItem";
 import { useState } from "react";
@@ -38,32 +40,45 @@ function App() {
 
   return (
     <>
-      <AppHeader />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/products"
-          element={
-            <Products
-              handleAddClick={handleAddClick}
-              handleRemoveClick={handleRemoveClick}
-              cart={cart}
-            />
-          }
-        />
-        <Route path="/products/:productId" element={<ProductItem />} />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cart={cart}
-              handleChange={handleChange}
-              handleRemoveClick={handleRemoveClick}
-            />
-          }
-        />
-      </Routes>
-      <AppFooter />
+      <div className="">
+        <AppHeader />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/products"
+            element={
+              <Products
+                handleAddClick={handleAddClick}
+                handleRemoveClick={handleRemoveClick}
+                cart={cart}
+              />
+            }
+          />
+          <Route path="/products/:productId" element={<ProductItem />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cart={cart}
+                handleChange={handleChange}
+                handleRemoveClick={handleRemoveClick}
+              />
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <About />
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Contact />
+            }
+          />
+        </Routes>
+        <AppFooter /></div>
     </>
   );
 }

@@ -1,8 +1,16 @@
-# Online Shopping App
+# 🛒 Online Shopping App
 
 An online shopping platform built with **React**, **React Router**, and styled using **Tailwind CSS**. This app allows users to browse products, view product details, manage their cart, and checkout with ease.
 
-## Features
+---
+
+## 🔗 Live Demo
+
+👉 [Click here to view the live app](https://react-router-online-shopping-app.netlify.app/)
+
+---
+
+## ✨ Features
 
 - **Product Listing**: Browse all available products with details.
 - **Product Details**: View detailed information about each product.
@@ -11,7 +19,7 @@ An online shopping platform built with **React**, **React Router**, and styled u
 
 ---
 
-## Tech Stack
+## ⚙️ Tech Stack
 
 - **React**: For building user interfaces.
 - **React Router**: For navigation between pages.
@@ -20,7 +28,7 @@ An online shopping platform built with **React**, **React Router**, and styled u
 
 ---
 
-## Usage Instructions
+## 📖 Usage Instructions
 
 ### Home Page:
 - Displays a welcome message or promotional content.
@@ -37,7 +45,7 @@ An online shopping platform built with **React**, **React Router**, and styled u
 
 ---
 
-## Styling
+## 🎨 Styling
 
 ### Tailwind CSS:
 - Utility-first CSS framework to build responsive and modern interfaces quickly.
@@ -45,9 +53,7 @@ An online shopping platform built with **React**, **React Router**, and styled u
 
 ---
 
-## API Integration
+## 📦 API Integration
 
 ### Fake Store API:
 - **URL**: [https://fakestoreapi.com/](https://fakestoreapi.com/)
-
-

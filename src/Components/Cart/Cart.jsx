@@ -29,47 +29,64 @@ const Cart = ({ cart, handleChange, handleRemoveClick }) => {
   }
   return (
     <>
-      <div className="flex  flex-col pt-36 gap-7 h-screen pl-28">
+      <div className="flex flex-col md:pt-44 pt-36 lg:pt-36 gap-7 min-h-screen px-6 md:px-16 lg:px-24">
         {cart.map((item) => (
-          <div className="flex gap-10 items-center" key={item.id}>
-            <img src={item.image} className="w-24 h-24" />
-            <h1 className="text-2xl font-semibold flex-wrap flex w-72">
+          <div
+            className="flex flex-col md:flex-row gap-6 md:gap-4 items-center justify-between border-b border-zinc-400 pb-4"
+            key={item.id}
+          >
+            {/* Image */}
+            <img src={item.image} className="w-32 h-28 object-contain" alt={item.title} />
+  
+            {/* Title */}
+            <h1 className="text-lg md:text-xl font-medium text-center md:text-left flex-wrap flex max-w-xs">
               {item.title}
             </h1>
-            <div className="flex gap-8 items-center pl-7">
+  
+            {/* Quantity Control */}
+            <div className="flex gap-4 items-center">
               <button
-                className="text-5xl"
+                className="text-3xl px-2"
                 onClick={() => handleChange(item, 1)}
               >
                 +
               </button>
-              <p className="text-3xl">{item.amount}</p>
+              <p className="text-xl">{item.amount}</p>
               <button
-                className="text-5xl"
+                className="text-3xl px-2"
                 onClick={() => handleChange(item, -1)}
               >
                 -
               </button>
             </div>
-            <p className="text-3xl flex items-center pl-24">$ {item.price}</p>
+  
+            {/* Price */}
+            <p className="text-2xl font-semibold">$ {item.price}</p>
+  
+            {/* Remove Button */}
             <button
-              className="text-2xl py-1 px-2 hover:px-3 hover:font-semibold bg-slate-300"
+              className="text-lg md:text-xl py-2 px-4 bg-cyan-700 hover:bg-cyan-900 text-white rounded-md "
               onClick={() => handleRemoveClick(item)}
             >
               Remove
             </button>
           </div>
         ))}
-        <div className="text-3xl font-semibold flex gap-80 pl-8 pt-7">
-          <div className="text-gray-700 text-3xl">Total</div>
-          <div>$ {price}</div>
-        </div>
-        <div className="text-2xl text-gray-700 flex pl-8 pt-6">
-          A 10% discount has been applied to every bill....
+  
+        {/* Total & Discount Section */}
+        <div className="flex flex-col gap-3 pt-5 md:pt-9">
+          <div className="flex justify-between text-2xl md:text-3xl font-semibold px-2">
+            <span className="text-gray-700">Total</span>
+            <span>${price}</span>
+          </div>
+          <div className="text-lg md:text-2xl text-gray-700 px-2 pb-10">
+            A 10% discount has been applied to every bill....
+          </div>
         </div>
       </div>
     </>
   );
+  
 };
 
 Cart.propTypes = {
